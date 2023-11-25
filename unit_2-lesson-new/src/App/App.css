@@ -1,0 +1,13 @@
+body {
+  font-family: Montserrat;
+}
+
+.container {
+  max-width: 1220px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-areas: 
+    'h h h'
+    'm m s'
+    'f f f';
+}
