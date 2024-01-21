@@ -1,0 +1,13 @@
+.heading {
+  color: greenyellow;
+}
+
+p {
+  color:blue;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
