@@ -18,6 +18,7 @@ function App() {
       <ul>
         <li>Hello</li>
         <li>{text+text2}</li>
+        
       </ul>
     </>
   );
