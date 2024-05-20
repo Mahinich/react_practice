@@ -1,0 +1,10 @@
+.test {
+  width: 100px;
+  height: 100px;
+  background-color: #ea5757;
+}
+
+.input {
+  box-shadow: 0 0 3px green;
+  border: 1px solid black;
+}
