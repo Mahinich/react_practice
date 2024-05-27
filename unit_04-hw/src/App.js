@@ -11,11 +11,16 @@ function App() {
   let task5DivText = React.createRef();
   let task6Select = React.createRef();
   let task7BG = React.createRef();
+  let task8RefOut = React.createRef();
+  let task8RefIn = React.createRef();
+  let task10ValueIn = React.createRef();
 
   const [out6Value, SetOut6Value] = useState('');
   const [task7value_1, SetTask7Value_1] = useState(0);
   const [task7value_2, SetTask7Value_2] = useState(0);
   const [task7value_3, SetTask7Value_3] = useState(0);
+  const [task8Output, SetTask8Output] = useState('');
+  const [task9Output, SetTask9Output] = useState(null)
   
   function randomInt(a, b) {
     return Math.floor(Math.random() * (a - b + 1) + b);
@@ -50,14 +55,20 @@ function App() {
     task7BG.current.style.backgroundColor = `rgb(${task7value_1}, ${task7value_2}, ${task7value_3})`;
   }
   function task8(e) {
-    console.log(e.key);
+    /* if (/\d/.test(e.key)) {
+      task8RefOut.current.innerHTML += 1;
+    } else {task8RefOut.current.innerHTML += 0}; */
+    if (/\d/.test(e.key)) {
+      SetTask8Output(task8Output + 1);
+    } else SetTask8Output(task8Output + 0);
   }
-  function task9() {
-
+  function task9(e) {
+    SetTask9Output(e.target.value)
   }
   let ar10 = [5, 6, 7];
-  function task10() {
-
+  function task10(e) {
+    ar10.push(task10ValueIn.current.value);
+    console.log(ar10)
   }
 
   return (
@@ -101,18 +112,18 @@ function App() {
       </section>
       <section>
         <h2>Task 8</h2>
-        <input type="text" className="task-8" onKeyDown={task8}></input>
-        <div className="out-8"></div>
+        <input type="text" className="task-8" onKeyPress={task8}></input>
+        <div className="out-8" ref={task8RefOut}>{task8Output}</div>
       </section>
       <section>
         <h2>Task 9</h2>
-        <input type="range" className="task-9"></input>
-        <div className="out-9"></div>
+        <input type="range" className="task-9" onInput={task9}></input>
+        <div className="out-9">{task9Output}</div>
       </section>
       <section>
         <h2>Task 10</h2>
-        <input type="number" className="i-10"></input>
-        <button className="task-10">Push</button>
+        <input type="number" className="i-10" ref={task10ValueIn}></input>
+        <button className="task-10"  onClick={task10}>Push</button>
       </section>
     </>
   );
