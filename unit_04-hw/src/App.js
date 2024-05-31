@@ -55,9 +55,6 @@ function App() {
     task7BG.current.style.backgroundColor = `rgb(${task7value_1}, ${task7value_2}, ${task7value_3})`;
   }
   function task8(e) {
-    /* if (/\d/.test(e.key)) {
-      task8RefOut.current.innerHTML += 1;
-    } else {task8RefOut.current.innerHTML += 0}; */
     if (/\d/.test(e.key)) {
       SetTask8Output(task8Output + 1);
     } else SetTask8Output(task8Output + 0);

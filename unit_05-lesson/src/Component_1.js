@@ -19,8 +19,11 @@ class Component_1 extends React.Component {
 
   addComment = () => {
     let comment = this.myRef.current.value;
-    console.log(comment);
-    let comments = this.state.commentsArray.push(comment);
+    let comments = this.state.commentsArray;
+    comments.push(comment)
+    this.setState({
+      commentsArray: comments
+    })
     this.myRef.current.value = '';
   }
   
@@ -42,7 +45,7 @@ class Component_1 extends React.Component {
           <button onClick={this.addComment}>Add Comment</button>
         </div>
         <div>
-          <ul></ul>
+          <ul>{this.state.commentsArray.map(item => <li key={item}>{item}</li>)}</ul>
         </div>
       </>
     )
