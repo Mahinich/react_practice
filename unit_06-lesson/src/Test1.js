@@ -20,12 +20,12 @@ class Test1 extends React.Component {
 
   static getDerivedStateFromProps(props, state) {
     console.log('get derived state');
-    return ({s1: props.arg});
-  }
-  
-  componentDidMount() {
-    console.log('component did mount');
-  }
+    return ({s1: props.arg}); 
+    }
+    
+    componentDidMount() {
+      console.log('component did mount');
+    }
 
   componentDidUpdate() {
     console.log('component did update');

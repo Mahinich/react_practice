@@ -6,8 +6,8 @@ import './App.css';
 function App() {
   return (
    <>
-    <Test1 arg={'my string'}/>
-    <Qwe/>
+    <Test1 arg={77}/>
+    {/* <Qwe arg='arg'/> */}
    </>
   );
 }
